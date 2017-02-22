@@ -11,8 +11,16 @@
 	tools:context="klima.tomas.recyclerviewandpicasso.MainActivity">
 
 	<TextView
+		android:id="@+id/numbr"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="Hello World!"
-		android:id="@+id/txt"/>
+		android:layout_alignParentBottom="true" />
+
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/recView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+
+		android:scrollbars="vertical" />
+
 </RelativeLayout>
