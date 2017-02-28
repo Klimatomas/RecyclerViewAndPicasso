@@ -27,23 +27,27 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 		ButterKnife.bind(this);
 
+		String searchQuery = getIntent().getStringExtra("searchQuery");
+		System.out.println("Query = " + searchQuery);
 		recView.setLayoutManager(new LinearLayoutManager(this));
 
-		RecipeAPI.Factory.getInstance().getResult().enqueue(new Callback<Puppy>() {
-			@Override public void onResponse(Call<Puppy> call, Response<Puppy> response) {
+		RecipeAPI.Factory.getInstance()
+				.getResult(searchQuery)
+				.enqueue(new Callback<Puppy>() {
+							 @Override public void onResponse(Call<Puppy> call, Response<Puppy> response) {
 
-				adapter = new RecAdapter(response.body().getResults());
-				recView.setAdapter(adapter);
+								 adapter = new RecAdapter(response.body().getResults());
+								 recView.setAdapter(adapter);
 
 
-			}
+							 }
 
-			@Override public void onFailure(Call<Puppy> call, Throwable t) {
-				Log.e("Failed", t.getMessage());
-			}
+							 @Override public void onFailure(Call<Puppy> call, Throwable t) {
+								 Log.e("Failed", t.getMessage());
+							 }
 
-		}
-		);
+						 }
+				);
 
 	}
 
