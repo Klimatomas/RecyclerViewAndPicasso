@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import klima.tomas.recyclerviewandpicasso.DisplayIngredients;
+import klima.tomas.recyclerviewandpicasso.DisplayIngredientsActivity;
 import klima.tomas.recyclerviewandpicasso.Models.Recipe;
 import klima.tomas.recyclerviewandpicasso.R;
 
@@ -41,7 +41,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecHolder> {
 
 		holder.itemView.setOnClickListener(new View.OnClickListener() {
 			@Override public void onClick(View v) {
-				Intent intent = new Intent(holder.itemView.getContext(), DisplayIngredients.class);
+				Intent intent = new Intent(holder.itemView.getContext(), DisplayIngredientsActivity.class);
 				intent.putExtra("recipe", item);
 				holder.itemView.getContext().startActivity(intent);
 			}

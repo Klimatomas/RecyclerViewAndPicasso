@@ -8,7 +8,7 @@
 	android:paddingLeft="@dimen/activity_horizontal_margin"
 	android:paddingRight="@dimen/activity_horizontal_margin"
 	android:paddingTop="@dimen/activity_vertical_margin"
-	tools:context="klima.tomas.recyclerviewandpicasso.FirstScreen">
+	tools:context="klima.tomas.recyclerviewandpicasso.SearchActivity">
 
 	<TextView
 		android:layout_width="match_parent"
@@ -32,6 +32,9 @@
 		android:layout_centerVertical="true"
 		android:hint="@string/searchHint"
 		android:textAlignment="center"
+		android:inputType="text"
+		android:imeOptions="actionDone"
 		/>
+
 
 </RelativeLayout>

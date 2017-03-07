@@ -1,6 +1,5 @@
 package klima.tomas.recyclerviewandpicasso.remote;
 
-
 import klima.tomas.recyclerviewandpicasso.Models.Puppy;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -23,7 +22,6 @@ public interface RecipeAPI {
 		public static RecipeAPI getInstance() {
 			if (service == null) {
 				Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
-				System.out.println(retrofit);
 				service = retrofit.create(RecipeAPI.class);
 				return service;
 
