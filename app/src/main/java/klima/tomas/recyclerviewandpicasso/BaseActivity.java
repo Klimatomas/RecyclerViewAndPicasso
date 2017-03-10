@@ -14,8 +14,6 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity {
 
 	@BindView(R.id.toolbar) Toolbar toolbar;
-	private int activityLayout;
-
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {

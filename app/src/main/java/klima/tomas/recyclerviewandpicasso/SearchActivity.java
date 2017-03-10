@@ -1,5 +1,6 @@
 package klima.tomas.recyclerviewandpicasso;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,8 @@ import butterknife.OnClick;
 public class SearchActivity extends AppCompatActivity {
 	@BindView(R.id.searchQuery) EditText searchQuery;
 	@BindView(R.id.searchButton) Button searchButton;
+
+
 
 
 	@Override

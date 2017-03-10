@@ -1,15 +1,11 @@
 package klima.tomas.recyclerviewandpicasso;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import klima.tomas.recyclerviewandpicasso.Models.Puppy;
 import klima.tomas.recyclerviewandpicasso.adapter.RecAdapter;
 import klima.tomas.recyclerviewandpicasso.remote.RecipeAPI;
