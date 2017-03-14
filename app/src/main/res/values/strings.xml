@@ -7,4 +7,5 @@
 	<string name="ysgramoth">YSGRAMOTH</string>
 	<string name="recipedetail">recipeDetail</string>
 	<string name="ingredients">INGREDIENTS</string>
+	<string name="force_crash">Force Crash!</string>
 </resources>
