@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
 
 android {
     compileSdkVersion 25
@@ -19,8 +21,6 @@ android {
     }
 }
 
-apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

@@ -5,6 +5,9 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Recipe implements Parcelable {
 
 	@SerializedName("title")
@@ -19,8 +22,8 @@ public class Recipe implements Parcelable {
 	}
 
 
-	public String getIngredients() {
-		return ingredients;
+	public List<String> getIngredients() {
+		return Arrays.asList(ingredients.split(","));
 	}
 
 
