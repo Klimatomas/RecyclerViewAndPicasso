@@ -13,8 +13,8 @@ public interface RecipeAPI {
 
 	@GET(".")
 	Call<Puppy> getResult(
-			@Query("q") String searchQuery
-	);
+					@Query("q") String searchQuery
+			);
 
 	class Factory {
 		private static RecipeAPI service;

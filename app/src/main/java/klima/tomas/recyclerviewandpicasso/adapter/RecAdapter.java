@@ -48,8 +48,6 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecHolder> {
 		});
 	}
 
-	;
-
 	@Override public int getItemCount() {
 		return listData.size();
 	}
@@ -59,7 +57,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecHolder> {
 		private TextView title;
 		private ImageView icon;
 
-		public RecHolder(View itemView) {
+		RecHolder(View itemView) {
 			super(itemView);
 
 			title = (TextView) itemView.findViewById(R.id.txticek);

@@ -6,4 +6,5 @@
 	<string name="introduction">Welcome to PuppyRecipes! What would you like to cook today?</string>
 	<string name="ysgramoth">YSGRAMOTH</string>
 	<string name="recipedetail">recipeDetail</string>
+	<string name="ingredients">INGREDIENTS</string>
 </resources>
