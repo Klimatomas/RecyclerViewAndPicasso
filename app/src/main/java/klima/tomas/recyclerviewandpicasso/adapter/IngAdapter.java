@@ -30,7 +30,6 @@ public class IngAdapter extends RecyclerView.Adapter<IngAdapter.IngHolder> {
 	}
 
 	@Override public int getItemCount() {
-		System.out.print(ingredientList.size());
 		return ingredientList.size();
 	}
 

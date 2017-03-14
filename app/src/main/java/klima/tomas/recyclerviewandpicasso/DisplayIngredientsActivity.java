@@ -18,7 +18,6 @@ import klima.tomas.recyclerviewandpicasso.internal.ParseIngredients;
 
 
 public class DisplayIngredientsActivity extends BaseActivity {
-//	@BindView(R.id.recipeText) TextView recipeText;
 	@BindView(R.id.detailPic) ImageView detailPic;
 	@BindView(R.id.ingView) RecyclerView ingView;
 
