@@ -16,13 +16,7 @@
 		android:text="@string/introduction"
 		android:textSize="22sp"
 		android:gravity="center"/>
-	<Button
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content"
-		android:text="@string/force_crash"
-		android:onClick="forceCrash"
-		android:layout_centerVertical="true"
-		android:layout_centerHorizontal="true" />
+
 
 	<Button
 		android:layout_width="wrap_content"

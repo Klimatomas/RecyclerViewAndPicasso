@@ -53,9 +53,6 @@ public class SearchActivity extends AppCompatActivity {
 		startActivity(intent);
 	}
 
-	public void forceCrash(View view) {
-		throw new RuntimeException("This is a crash");
-	}
 
 }
 
