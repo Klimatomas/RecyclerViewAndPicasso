@@ -6,7 +6,6 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,11 +26,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-			@Override public void onClick(View v) {
-				onBackPressed();
-			}
-		});
+		toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
 	}
 

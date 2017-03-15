@@ -16,8 +16,6 @@ public class DisplayIngredientsActivity extends BaseActivity {
 	@BindView(R.id.detailPic) ImageView detailPic;
 	@BindView(R.id.ingView) RecyclerView ingView;
 
-	private IngAdapter adapter;
-
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +30,7 @@ public class DisplayIngredientsActivity extends BaseActivity {
 		getSupportActionBar().setTitle(recipe.getTitle());
 		Picasso.with(this).load(recipe.getThumbnail().isEmpty() ? "https://i.gyazo.com/88d02d711b1be8733bcb52d5050c5457.png" : recipe.getThumbnail()).resize(500, 500).into(detailPic);
 
-		adapter = new IngAdapter(recipe.getIngredients());
+		IngAdapter adapter = new IngAdapter(recipe.getIngredients());
 		ingView.setAdapter(adapter);
 
 	}

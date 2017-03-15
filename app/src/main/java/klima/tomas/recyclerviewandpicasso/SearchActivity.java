@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,20 +28,22 @@ public class SearchActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Fabric.with(this, new Crashlytics());
-		setContentView(R.layout.activity_first_screen);
+		setContentView(R.layout.activity_search);
 		ButterKnife.bind(this);
 
 
-		searchQuery.setOnEditorActionListener(new EditText.OnEditorActionListener() {
-			@Override public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-				if (actionId == EditorInfo.IME_ACTION_DONE) {
-					searchButton.performClick();
-					return true;
-				}
-				return false;
+		searchQuery.setOnEditorActionListener((v, actionId, event) -> {
+			if (actionId == EditorInfo.IME_ACTION_DONE) {
+				searchButton.performClick();
+				return true;
 			}
+			return false;
 		});
 	}
+
+
+
+
 
 
 	@OnClick(R.id.searchButton)
