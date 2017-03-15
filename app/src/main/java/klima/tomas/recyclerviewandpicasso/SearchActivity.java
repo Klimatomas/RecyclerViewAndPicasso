@@ -12,12 +12,11 @@ import android.widget.TextView;
 import com.crashlytics.android.Crashlytics;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends BaseActivity {
 	@BindView(R.id.searchQuery) EditText searchQuery;
 	@BindView(R.id.searchButton) Button searchButton;
 
@@ -28,9 +27,6 @@ public class SearchActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Fabric.with(this, new Crashlytics());
-		setContentView(R.layout.activity_search);
-		ButterKnife.bind(this);
-
 
 		searchQuery.setOnEditorActionListener((v, actionId, event) -> {
 			if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -41,9 +37,9 @@ public class SearchActivity extends AppCompatActivity {
 		});
 	}
 
-
-
-
+	@Override public int getActivityLayout() {
+		return R.layout.activity_search;
+	}
 
 
 	@OnClick(R.id.searchButton)
