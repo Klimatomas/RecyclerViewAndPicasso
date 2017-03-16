@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-	@BindView(R.id.toolbar) Toolbar toolbar;
+	@Nullable @BindView(R.id.toolbar) Toolbar toolbar;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,11 +23,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 			ButterKnife.bind(this);
 
 		}
-		setSupportActionBar(toolbar);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		if (toolbar != null) {
+			setSupportActionBar(toolbar);
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		toolbar.setNavigationOnClickListener(v -> onBackPressed());
-
+			toolbar.setNavigationOnClickListener(v -> onBackPressed());
+		}
 	}
 
 	public abstract @LayoutRes int getActivityLayout();
