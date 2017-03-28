@@ -18,12 +18,11 @@ public class SearchActivity extends BaseActivity {
 	@BindView(R.id.searchButton) Button searchButton;
 
 
-
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Fabric.with(this, new Crashlytics());
+
 
 		searchQuery.setOnEditorActionListener((v, actionId, event) -> {
 			if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -41,12 +40,12 @@ public class SearchActivity extends BaseActivity {
 
 	@OnClick(R.id.searchButton)
 	void clickButton() {
+
 		String query = searchQuery.getText().toString();
 		Intent intent = new Intent(this, MainActivity.class);
 		intent.putExtra("searchQuery", query);
 		startActivity(intent);
 	}
-
 
 }
 

@@ -39,4 +39,5 @@ public class DisplayIngredientsActivity extends BaseActivity {
 	@Override public int getActivityLayout() {
 		return R.layout.activity_display_ingredients;
 	}
+
 }

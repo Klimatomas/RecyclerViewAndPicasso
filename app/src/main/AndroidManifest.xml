@@ -3,6 +3,8 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
 
 	<application
 		android:allowBackup="true"
@@ -10,6 +12,11 @@
 		android:label="PuppyRecipe"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
+
+		<service
+			android:name=".background.UserSpying"
+			android:exported="false"/>
+
 		<activity android:name=".MainActivity" />
 		<activity android:name=".DisplayIngredientsActivity" />
 		<activity android:name=".SearchActivity">
