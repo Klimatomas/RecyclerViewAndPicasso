@@ -16,6 +16,21 @@
 #   public *;
 #}
 -keep class org.apache.http.** { *; }
+-keep class sun.misc.Unsafe { *; }
+-dontwarn java.nio.file.*
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-dontwarn okio.**
 -dontwarn org.apache.http.**
+
 -dontwarn android.net.**
--dontwarn con.squareup.**
+
+-dontwarn com.squareup.okhttp.**
+
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
