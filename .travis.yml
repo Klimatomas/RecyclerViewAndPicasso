@@ -26,4 +26,4 @@ android:
     - sys-img-armeabi-v7a-android-25
 
 after_failure:
-  - cat /home/travis/build/Klimatomas/RecyclerViewAndPicasso/app/build/reports/androidTests/connected/*.html
+  - cat /home/travis/build/Klimatomas/RecyclerViewAndPicasso/app/build/outputs/lint-results-debug.html
