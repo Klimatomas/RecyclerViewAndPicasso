@@ -13,7 +13,6 @@ public class CustomApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		Fabric.with(this, new Crashlytics());
-		System.out.println("som tu");
 
 	}
 }

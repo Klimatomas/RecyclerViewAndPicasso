@@ -6,11 +6,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.crashlytics.android.Crashlytics;
-
 import butterknife.BindView;
 import butterknife.OnClick;
-import io.fabric.sdk.android.Fabric;
 
 
 public class SearchActivity extends BaseActivity {
