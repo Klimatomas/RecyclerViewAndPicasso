@@ -1,6 +1,5 @@
 package klima.tomas.recyclerviewandpicasso;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -19,10 +18,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
-
 		Intent mServiceIntent = new Intent(this, UserSpying.class);
 		startService(mServiceIntent);
-
 
 		super.onCreate(savedInstanceState);
 		int activityLayout = getActivityLayout();

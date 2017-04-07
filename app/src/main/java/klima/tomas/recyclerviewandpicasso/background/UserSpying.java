@@ -1,6 +1,5 @@
 package klima.tomas.recyclerviewandpicasso.background;
 
-
 import android.Manifest;
 import android.app.IntentService;
 import android.content.Intent;
@@ -16,6 +15,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import timber.log.Timber;
+
 
 public class UserSpying extends IntentService implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 	GoogleApiClient mGoogleApiClient;
@@ -24,12 +25,17 @@ public class UserSpying extends IntentService implements GoogleApiClient.Connect
 		super("UserSpying");
 	}
 
-	@Override protected void onHandleIntent(Intent workIntent) {
+	@Override
+	protected void onHandleIntent(Intent workIntent) {
+
+
 		mGoogleApiClient.connect();
 
 	}
 
-	@Override public void onStart(Intent intent, int startId) {
+	@Override
+	public void onStart(Intent intent, int startId) {
+		Timber.plant(new Timber.DebugTree());
 		if (mGoogleApiClient == null) {
 			mGoogleApiClient = new GoogleApiClient.Builder(this)
 					.addConnectionCallbacks(this)
@@ -43,10 +49,11 @@ public class UserSpying extends IntentService implements GoogleApiClient.Connect
 	}
 
 
-	@Override public void onConnected(@Nullable Bundle bundle) {
+	@Override
+	public void onConnected(@Nullable Bundle bundle) {
 		LocationRequest mLocationRequest = LocationRequest.create();
 		mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-		mLocationRequest.setInterval(1000);
+		mLocationRequest.setInterval(300);
 		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 			// request permissions?
 			return;
@@ -56,15 +63,18 @@ public class UserSpying extends IntentService implements GoogleApiClient.Connect
 
 	}
 
-	@Override public void onConnectionSuspended(int i) {
+	@Override
+	public void onConnectionSuspended(int i) {
 
 	}
 
-	@Override public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+	@Override
+	public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
 	}
 
-	@Override public void onLocationChanged(Location location) {
+	@Override
+	public void onLocationChanged(Location location) {
 		System.out.println("LOCATION CHANGED");
 		System.out.println("Location received: " + location.toString());
 	}
