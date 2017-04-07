@@ -40,5 +40,4 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 	public abstract @LayoutRes int getActivityLayout();
 
-
 }

@@ -3,7 +3,6 @@ package klima.tomas.recyclerviewandpicasso;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import butterknife.BindView;
 import klima.tomas.recyclerviewandpicasso.Models.Puppy;
@@ -12,6 +11,7 @@ import klima.tomas.recyclerviewandpicasso.remote.RecipeAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import timber.log.Timber;
 
 
 public class MainActivity extends BaseActivity {
@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity {
 							 }
 
 							 @Override public void onFailure(Call<Puppy> call, Throwable t) {
-								 Log.e("Failed", t.getMessage());
+								 Timber.d("Failed", t.getMessage());
 							 }
 
 						 }
