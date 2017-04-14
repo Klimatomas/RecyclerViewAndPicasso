@@ -1,11 +1,7 @@
 <resources>
-	<string name="app_name">RecyclerViewAndPicasso</string>
-	<string name="dummy">dummy</string>
 	<string name="search">SEARCH</string>
 	<string name="searchHint">e.g. Spaghetti Carbonara</string>
 	<string name="introduction">Welcome to PuppyRecipes! What would you like to cook today?</string>
-	<string name="ysgramoth">YSGRAMOTH</string>
-	<string name="recipedetail">recipeDetail</string>
 	<string name="ingredients">INGREDIENTS</string>
-	<string name="force_crash">Force Crash!</string>
+	<string name="appName">PuppyRecipe</string>
 </resources>

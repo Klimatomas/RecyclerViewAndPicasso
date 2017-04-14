@@ -1,5 +1,7 @@
 package klima.tomas.recyclerviewandpicasso;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -33,6 +35,11 @@ public class DisplayIngredientsActivity extends BaseActivity {
 		IngAdapter adapter = new IngAdapter(recipe.getIngredients());
 		ingView.setAdapter(adapter);
 
+	}
+
+	public static Intent getStartIntent(Context context, Recipe recipe) {
+		return new Intent(context, DisplayIngredientsActivity.class)
+				.putExtra("recipe", recipe);
 	}
 
 

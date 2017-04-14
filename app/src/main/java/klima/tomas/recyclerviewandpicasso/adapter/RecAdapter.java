@@ -39,12 +39,9 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecHolder> {
 				.load(String.valueOf((item.getThumbnail().isEmpty() ? "https://i.gyazo.com/88d02d711b1be8733bcb52d5050c5457.png" : item.getThumbnail())))
 				.into(holder.icon);
 
-		holder.itemView.setOnClickListener(new View.OnClickListener() {
-			@Override public void onClick(View v) {
-				Intent intent = new Intent(holder.itemView.getContext(), DisplayIngredientsActivity.class);
-				intent.putExtra("recipe", item);
-				holder.itemView.getContext().startActivity(intent);
-			}
+		holder.itemView.setOnClickListener(v -> {
+			Intent startIntent = DisplayIngredientsActivity.getStartIntent(holder.itemView.getContext(), item);
+			holder.itemView.getContext().startActivity(startIntent);
 		});
 	}
 

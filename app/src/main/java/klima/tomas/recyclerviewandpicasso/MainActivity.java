@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity {
 							 }
 
 							 @Override public void onFailure(Call<Puppy> call, Throwable t) {
-								 Timber.d("Failed", t.getMessage());
+								 Timber.wtf(t, "Failed");
 							 }
 
 						 }

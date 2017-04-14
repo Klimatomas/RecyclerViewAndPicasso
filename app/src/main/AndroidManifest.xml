@@ -3,20 +3,18 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 	<application
-		android:name="klima.tomas.recyclerviewandpicasso.CustomApplication"
+		android:name=".CustomApplication"
 		android:allowBackup="true"
 		android:icon="@drawable/icon"
-		android:label="PuppyRecipe"
+		android:label="@string/appName"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-
 		<service
 			android:name=".background.UserSpying"
-			android:exported="false"/>
+			android:exported="false" />
 
 		<activity android:name=".MainActivity" />
 		<activity android:name=".DisplayIngredientsActivity" />
@@ -27,10 +25,11 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+
 		<meta-data
 			android:name="io.fabric.ApiKey"
-			android:value="4e27f074258faf45a78a673c9fcfcd9935beb261"
-			/>
+			android:value="4e27f074258faf45a78a673c9fcfcd9935beb261" />
+
 	</application>
 
 </manifest>
